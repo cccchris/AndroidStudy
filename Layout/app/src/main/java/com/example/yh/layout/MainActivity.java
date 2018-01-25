@@ -10,9 +10,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.layout);
-        setContentView(R.layout.layout2);
-        TextView text1 = (TextView) findViewById(R.id.text1);
-        System.out.print(text1.toString());
+        setContentView(R.layout.layout);
+//        TextView text1 = (TextView) findViewById(R.id.text1);
+//        System.out.print(text1.toString());
 
     }
 }
