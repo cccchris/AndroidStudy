@@ -42,13 +42,22 @@ public class AnimalAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        view = LayoutInflater.from(mComtext).inflate(R.layout.listview,viewGroup,false);
-        ImageView img_icon = (ImageView) view.findViewById(R.id.img);
-        TextView  name = (TextView) view.findViewById(R.id.name);
-        TextView  content = (TextView) view.findViewById(R.id.content);
-        img_icon.setBackgroundResource(mData.get(i).getaIcon());
-        name.setText(mData.get(i).getaName());
-        content.setText(mData.get(i).getaSpeak());
+        ViewHolder viewHolder = null;
+
+        if (view == null) {
+            view = LayoutInflater.from(mComtext).inflate(R.layout.listview,viewGroup,false);
+            viewHolder = new ViewHolder();
+            viewHolder.img_icon =  (ImageView) view.findViewById(R.id.img);
+            viewHolder.name = (TextView) view.findViewById(R.id.name);
+            viewHolder.content = (TextView) view.findViewById(R.id.content);
+            view.setTag(viewHolder);
+        }else  {
+            viewHolder = (ViewHolder) view.getTag();
+        }
+
+        viewHolder.img_icon.setBackgroundResource(mData.get(i).getaIcon());
+        viewHolder.name.setText(mData.get(i).getaName());
+        viewHolder.content.setText(mData.get(i).getaSpeak());
         return view;
     }
 
@@ -57,4 +66,12 @@ public class AnimalAdapter extends BaseAdapter {
     public CharSequence[] getAutofillOptions() {
         return new CharSequence[0];
     }
+
+}
+
+class ViewHolder {
+    ImageView img_icon;
+    TextView  name;
+    TextView  content;
+
 }

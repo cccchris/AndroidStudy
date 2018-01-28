@@ -3,6 +3,8 @@ package com.example.yh.adapter;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         mContext = MainActivity.this;
         list_animal = (ListView) findViewById(R.id.list_view);
-        LinkedList<Animal> mData = new LinkedList<Animal>();
+        final LinkedList<Animal> mData = new LinkedList<Animal>();
 
         mData.add(new Animal(
                 "狗说","你是狗吗？",R.mipmap.icon03
@@ -50,5 +52,26 @@ public class MainActivity extends AppCompatActivity {
 
         list_animal.setAdapter(mAdapter);
 
+        try {
+            Thread.currentThread().sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        Animal an =  mData.getLast();
+        an.setaName("马马马说");
+        an.setaName("你是马马马马吗？");
+        an.setaIcon(R.mipmap.icon03);
+        mAdapter = new AnimalAdapter((LinkedList<Animal>) mData,mContext);
+
+        list_animal.setAdapter(mAdapter);
+        list_animal.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                System.out.println(i);
+                Animal an = mData.get(i);
+                System.out.println(an.getaName()+an.getaSpeak());
+            }
+        });
     }
 }
