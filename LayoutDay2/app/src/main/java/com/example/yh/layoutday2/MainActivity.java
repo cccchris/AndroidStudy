@@ -1,6 +1,8 @@
 package com.example.yh.layoutday2;
 
 import android.content.Intent;
+import android.os.PersistableBundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -59,11 +61,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        System.out.println("页面开始");
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         System.out.println("页面重新激活");
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        System.out.println("页面即将不可见");
+    }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        System.out.println("页面已经不可见");
+    }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        System.out.println("页面再次回到前台");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        System.out.println("页面销毁");
+    }
 }

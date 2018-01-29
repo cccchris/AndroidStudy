@@ -21,4 +21,9 @@ public class SecondActivity extends AppCompatActivity {
         });
 
     }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        System.out.println("页面销毁");
+    }
 }
