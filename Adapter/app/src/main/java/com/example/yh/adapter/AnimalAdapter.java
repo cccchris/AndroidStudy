@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,7 +16,8 @@ import java.util.LinkedList;
  * Created by wangyong on 2018/1/26.
  */
 
-public class AnimalAdapter extends BaseAdapter {
+
+public class AnimalAdapter extends BaseAdapter{
 
     private LinkedList<Animal> mData;
     private Context mComtext;
@@ -41,7 +43,7 @@ public class AnimalAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public View getView(final int i, View view, ViewGroup viewGroup) {
         ViewHolder viewHolder = null;
 
         if (view == null) {
@@ -50,6 +52,7 @@ public class AnimalAdapter extends BaseAdapter {
             viewHolder.img_icon =  (ImageView) view.findViewById(R.id.img);
             viewHolder.name = (TextView) view.findViewById(R.id.name);
             viewHolder.content = (TextView) view.findViewById(R.id.content);
+            viewHolder.btn = (Button) view.findViewById(R.id.bt_btn);
             view.setTag(viewHolder);
         }else  {
             viewHolder = (ViewHolder) view.getTag();
@@ -58,13 +61,38 @@ public class AnimalAdapter extends BaseAdapter {
         viewHolder.img_icon.setBackgroundResource(mData.get(i).getaIcon());
         viewHolder.name.setText(mData.get(i).getaName());
         viewHolder.content.setText(mData.get(i).getaSpeak());
+        viewHolder.btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                deleteItem.onDeleteClick(i);
+            }
+        });
+
         return view;
     }
+
+
 
     @Nullable
     @Override
     public CharSequence[] getAutofillOptions() {
         return new CharSequence[0];
+    }
+
+    //添加接口 向Activity 传递消息
+    public interface deleteItemListener {
+        void onDeleteClick(int i);
+    }
+
+    private deleteItemListener deleteItem;
+
+    public deleteItemListener getDeleteItem() {
+        return deleteItem;
+    }
+
+    public void setDeleteItem(deleteItemListener deleteItem) {
+        this.deleteItem = deleteItem;
     }
 
 }
@@ -73,5 +101,6 @@ class ViewHolder {
     ImageView img_icon;
     TextView  name;
     TextView  content;
+    Button    btn;
 
 }
