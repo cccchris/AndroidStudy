@@ -43,6 +43,11 @@ public class AnimalAdapter extends BaseAdapter{
     }
 
     @Override
+    public int getViewTypeCount() {
+        return super.getViewTypeCount();
+    }
+
+    @Override
     public View getView(final int i, View view, ViewGroup viewGroup) {
         ViewHolder viewHolder = null;
 

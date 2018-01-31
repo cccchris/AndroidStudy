@@ -43,3 +43,4 @@ public class Animal {
         return aIcon;
     }
 }
+
