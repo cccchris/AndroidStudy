@@ -8,10 +8,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        requestWindowFeature(Window.FEATURE_NO_TITLE); // 好像是隐藏导航栏的
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //requestWindowFeature(Window.FEATURE_NO_TITLE); // 好像是隐藏导航栏的
     }
 }
