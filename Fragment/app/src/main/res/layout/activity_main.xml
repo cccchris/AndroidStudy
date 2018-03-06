@@ -7,13 +7,14 @@
     tools:context="com.example.wangyong.fragment.MainActivity">
 
     <RelativeLayout
-        android:id="@+id/rly_topbar"
+        android:id="@+id/rly_top_bar"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:gravity="center"
         android:background="@color/bg_topbar">
 
         <TextView
+            android:id="@+id/txt_top_bar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -44,8 +45,12 @@
             android:drawablePadding="3dp"
             android:gravity="center"
             android:padding="5dp"
-            android:text="首页"
-            android:textSize="14sp" />
+            android:text="1111"
+            android:textSize="14sp"
+            android:textColor="@drawable/tab_m_text"
+            android:drawableTop="@drawable/tab_m_message"
+            android:background="@drawable/tab_m_bg"/>
+
         <TextView
             android:id="@+id/txt_better"
             android:layout_width="0dp"
@@ -54,8 +59,11 @@
             android:drawablePadding="3dp"
             android:gravity="center"
             android:padding="5dp"
-            android:text="首页"
-            android:textSize="14sp" />
+            android:text="222"
+            android:textSize="14sp"
+            android:textColor="@drawable/tab_m_text"
+            android:drawableTop="@drawable/tab_m_better"
+            android:background="@drawable/tab_m_bg"/>
         <TextView
             android:id="@+id/txt_setting"
             android:layout_width="0dp"
@@ -64,8 +72,11 @@
             android:drawablePadding="3dp"
             android:gravity="center"
             android:padding="5dp"
-            android:text="首页"
-            android:textSize="14sp" />
+            android:text="333"
+            android:textSize="14sp"
+            android:textColor="@drawable/tab_m_text"
+            android:drawableTop="@drawable/tab_m_setting"
+            android:background="@drawable/tab_m_bg"/>
 
         <TextView
             android:id="@+id/txt_channel"
@@ -75,24 +86,27 @@
             android:drawablePadding="3dp"
             android:gravity="center"
             android:padding="5dp"
-            android:text="首页"
-            android:textSize="14sp" />
+            android:text="4444"
+            android:textSize="14sp"
+            android:textColor="@drawable/tab_m_text"
+            android:drawableTop="@drawable/tab_m_channel"
+            android:background="@drawable/tab_m_bg"/>
     </LinearLayout>
 
 
-    <ImageView
+    <TextView
         android:id="@+id/div_tab_bar"
         android:layout_width="match_parent"
         android:layout_height="2sp"
         android:background="@color/div_white"
         android:layout_above="@+id/ly_tab_bar"/>
 
-    <fragment
+    <FrameLayout
         android:id="@+id/ly_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/div_tab_bar"
-        android:layout_below="@+id/rly_topbar">
-    </fragment>
+        android:layout_below="@+id/rly_top_bar">
+    </FrameLayout>
 
 </RelativeLayout>
