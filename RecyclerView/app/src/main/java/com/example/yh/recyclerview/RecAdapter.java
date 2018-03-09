@@ -18,6 +18,22 @@ public class RecAdapter extends RecyclerView.Adapter {
     private List<String> datas;
     private Context context;
 
+    public List<String> getDatas() {
+        return datas;
+    }
+
+    public void setDatas(List<String> datas) {
+        this.datas = datas;
+    }
+
+    public Context getContext() {
+        return context;
+    }
+
+    public void setContext(Context context) {
+        this.context = context;
+    }
+
     public RecAdapter(List<String> datas, MainActivity context) {
         this.datas = datas;
         this.context = context;
