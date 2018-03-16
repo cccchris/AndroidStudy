@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="ch.ielse:imagewatcher-1.0.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/imagewatcher-1.0.1.aar/14504e94ae9f28bdc055c52ed9ad2e49/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/imagewatcher-1.0.1.aar/14504e94ae9f28bdc055c52ed9ad2e49/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ch.ielse/imagewatcher/1.0.1/de64411496199493a428a26c5f8ca31041dce9b/imagewatcher-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
