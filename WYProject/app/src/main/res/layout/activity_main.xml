@@ -6,13 +6,135 @@
     android:layout_height="match_parent"
     tools:context="com.example.yh.wyproject.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/common_bg">
+
+        <LinearLayout
+            android:id="@+id/main_bottom"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/grey_400"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@color/grey_400"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                tools:ignore = "">
+
+                <RelativeLayout
+                    android:id="@+id/rl_home"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/btn_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorWhite"
+                        android:drawableTop="@drawable/main_home_icon_selector"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="7dp"
+                        android:textColor="@color/em_main_botton_text_color"
+                        android:text="首页"
+                        android:onClick="onTabClicked"
+                         />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_dis"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/btn_dis"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorWhite"
+                        android:drawableTop="@drawable/main_find_icon_selector"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="7dp"
+                        android:textColor="@color/em_main_botton_text_color"
+                        android:text="活动"
+                        android:onClick="onTabClicked"
+
+                        />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rl_msg"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/btn_msg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorWhite"
+                        android:drawableTop="@drawable/main_msg_icon_selector"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="7dp"
+                        android:textColor="@color/em_main_botton_text_color"
+                        android:text="消息"
+                        android:onClick="onTabClicked"
+                        />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rl_mine"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/btn_mine"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorWhite"
+                        android:drawableTop="@drawable/main_mine_icon_selector"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="7dp"
+                        android:textColor="@color/em_main_botton_text_color"
+                        android:text="我的"
+                        android:onClick="onTabClicked"
+                        />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/main_bottom" />
+
+    </RelativeLayout>
+
+    <!--<ch.ielse.view.imagewatcher.ImageWatcher-->
+        <!--android:id="@+id/v_image_watcher"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--&gt;</ch.ielse.view.imagewatcher.ImageWatcher>-->
+
+    <LinearLayout
+        android:id="@+id/main_mask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:background="@mipmap/qidong">
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
